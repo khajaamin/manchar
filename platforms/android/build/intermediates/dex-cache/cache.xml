@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/var/www/html/manchar/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ad24c918467fd7fc77b816fd2ddcfd371addb0d1">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_9263df61654381738610437152ad25c280b3ef3c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/manchar/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_ebdbc668b1d241164a1187aa3f31cc8623ab865a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/manchar/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_5d9ba9f422a1e30b648b6c995cadbc06e153d3d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/manchar/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.8.0_590b876ff76cb622024e3925e122a2cbded4932a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/manchar/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="04bbbddf868aa02dd33f9e90d8f5d908c360f638">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-location-9.8.0_312553e672c832820b6167a325a5959f31bcaf4d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/khajaamin/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_e70f5d0fb5b763b5d2e83306d6c0c3e0c0d1062c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/manchar/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.8.0_4e03cc1241a3a6883d474759634b6aa832033819.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/manchar/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="122ec9237acd8a57d974b9d529987f1ee6ca5aea">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-9.8.0_ea82592ef2861ba3bcf81de1e8e59841ce46a7df.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/var/www/html/manchar/platforms/android/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7e92aadd0697922316d1395c1887a23aebec640a">
+        <dex dex="/var/www/html/manchar/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.8.0_7d818fcdc5d1f07aa385a26d2e9894f8f1178ede.jar" />
+    </item>
+
+</items>
