@@ -1,0 +1,49 @@
+<!--
+  Generated template for the Signup page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Signup & Login</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="login-content" padding>
+
+    <div class="login-box">
+        <form (ngSubmit)="registerUser()" #signupFrm="ngForm">
+            <ion-row>
+                <ion-col>
+                    <ion-list inset>
+
+                        <ion-item>
+                            <ion-input type="text" placeholder="Name *" name="name" [(ngModel)]="user.name" required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="user.email"></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-input type="text" placeholder="Mobile No. *" name="mobile" [(ngModel)]="user.mobile" required></ion-input>
+                        </ion-item>
+
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class="signup-col">
+                    <button ion-button class="submit-btn" full type="submit" [disabled]="!signupFrm.form.valid">Signup & Login</button>
+                    <!--<button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>-->
+                </ion-col>
+            </ion-row>
+
+        </form>
+    </div>
+</ion-content>

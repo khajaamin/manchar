@@ -6,37 +6,154 @@
 -->
 <ion-header>
 
-  <ion-navbar>
- <button ion-button menuToggle>
+    <ion-navbar>
+        <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-   
-    <ion-title>home</ion-title>
-  </ion-navbar>
+
+        <ion-title>
+            <span> Digi</span><span class="logo">Pune</span>
+              <ion-spinner *ngIf="loading"></ion-spinner>
+        </ion-title> 
+
+    <ion-buttons style="width: 50%;" small end>        
+       <ion-input   small (click)="showAddressModal()" [(ngModel)]="address.place" type="text" placeholder="Pick Location" end>           
+           <ion-icon name="pin"></ion-icon>
+       </ion-input>       
+    </ion-buttons>
+    
+
+    </ion-navbar>
 
 </ion-header>
 
+<ion-content>
+    <ion-grid  *ngIf="!homeSearch">
+        <ion-row>
+            <ion-slides *ngIf="sliders && sliders.length >0" initialSlide="0" autoplay="4000" loop="true" pager="true" >
+                <ion-slide *ngFor="let slide of sliders">
+                    <img src="{{IMG_BASE}}{{slide.image}}" title="slide.caption" style="height: 170px;width: 100%">
+                    <h2></h2>
+                </ion-slide>
+            </ion-slides>
+        </ion-row>
+    </ion-grid>
 
-<ion-content padding>
+    <button  *ngIf="!homeSearch" ion-button full color="danger"  (click)="visitOffers()">Special Offers</button>
+
+    <ion-searchbar [(ngModel)]="homeSearch" [autocomplete]='on' [showCancelButton]="true" (ionInput)="getItems($event)" (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+    <ion-grid>
+        <ion-row *ngIf="categoriesList && !homeSearch ">
+            <ion-col col-3 *ngFor="let item of items">
+                <div>
+                    <a (click)="itemTapped($event,item)">
+                        <span *ngIf="!item.logo_image">
+                        <img  src="{{IMG_BASE}}default_icon.png"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">								
+                    </span>
+                        <span *ngIf="item.logo_image">
+                        <img  src="{{IMG_BASE}}{{item.logo_image}}"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">
+                    </span>
+                        <p class="help-block button-positive icon-text text-center">{{item.category_name}}</p>
+                    </a>
+                </div>
+
+            </ion-col>
+        </ion-row>
 
 
-<ion-grid>
-  <ion-row>
-    <ion-col col-3  *ngFor="let item of categoriesList">
-      <div>
-			<a href="#/app/buses/{{item.id}}">
-				<span *ngIf="!item.logo_image">
-					<img  src="{{IMG_BASE}}default_icon.png"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">								
-				</span>
-				<span *ngIf="item.logo_image">
-					<img  src="{{IMG_BASE}}{{item.logo_image}}"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">
-				</span>
-				 <p class="help-block button-positive icon-text text-center">{{item.category_name}}</p>
-			</a>
-		</div>
-	
-    </ion-col>
-  </ion-row>
-</ion-grid>
+        <ion-list *ngIf="categoriesList && homeSearch && categoriesList.length > 0" >
+            <ion-item>
+                Categories ({{categoriesList.length}})
+            </ion-item>
+        </ion-list>
 
+        <ion-row *ngIf="categoriesList && homeSearch">
+            <ion-col col-3 *ngFor="let item of categoriesList">
+                <div>
+                    <a (click)="subCategoryTapped($event,item)">
+                        <span *ngIf="!item.logo_image">
+                <img  src="{{IMG_BASE}}default_icon.png"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">								
+              </span>
+                        <span *ngIf="item.logo_image">
+                <img  src="{{IMG_BASE}}{{item.logo_image}}"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">
+              </span>
+                        <p class="help-block button-positive icon-text text-center">{{item.category_name}}</p>
+                    </a>
+                </div>
+
+            </ion-col>
+        </ion-row>
+        
+        <ion-list  *ngIf="subCategoriesList && homeSearch && subCategoriesList.length > 0 ">
+            <ion-item>
+                Sub Categories ({{subCategoriesList.length}})
+            </ion-item>
+        </ion-list>
+        
+        <ion-row *ngIf="subCategoriesList && homeSearch">
+            <ion-col col-3 *ngFor="let item of subCategoriesList">
+                <div>
+                    <a (click)="subCategoryTapped($event,item)">
+                        <span *ngIf="!item.logo_image">
+                <img  src="{{IMG_BASE}}default_icon.png"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">								
+              </span>
+                        <span *ngIf="item.logo_image">
+                <img  src="{{IMG_BASE}}{{item.logo_image}}"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">
+              </span>
+                        <p class="help-block button-positive icon-text text-center">{{item.category_name}}</p>
+                    </a>
+                </div>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+    <div *ngIf="homeSearch && (categoriesList && subCategoriesList) && (categoriesList.length <= 0 && subCategoriesList.length <= 0)">
+    <ion-grid  *ngFor="let item of vendorsList" >
+        <ion-card>
+            <ion-item (click)="vendorTapped($event,item)">
+                <ion-avatar item-left>
+                    
+                    <img *ngIf="item.logo_image" src="{{IMG_BASE}}{{item.logo_image}}">
+                </ion-avatar>
+                <ion-card-title>{{item.shop_name}}</ion-card-title>
+                <p>{{item.shop_owner}}</p>
+            </ion-item>
+
+            <img src="{{IMG_BASE}}{{item.shop_image}}" *ngIf="item.shop_image" (click)="vendorTapped($event,item,selectedItem)" style="max-height: 200px">
+            <img src="{{IMG_BASE}}default_icon.png" *ngIf="!item.shop_image" (click)="vendorTapped($event,item,selectedItem)" style="max-height: 200px">
+
+            <ion-card-content>
+                <p><label>Address :</label>{{item.shop_address}}</p>
+
+                <p><label>Time :</label>
+                    <ion-icon name="time"></ion-icon> {{item.time_from}} - {{item.time_to}}</p>
+
+                <p><label>Weekly Off :</label>{{item.weekly_off}}</p>
+
+            </ion-card-content>
+
+
+            <ion-row>
+                <ion-col>
+                    <button (click)="phoneCall(item)" ion-button icon-left color="secondary" full>
+                      <ion-icon name="call"></ion-icon> Call
+                  
+                    </button>
+                </ion-col>
+                <ion-col>
+                    <button (click)="regularShare(item)" ion-button icon-left color="danger" full>
+                  <ion-icon name="share"></ion-icon>
+                    Share 
+                </button>
+                </ion-col>
+            </ion-row>
+
+
+        </ion-card>
+
+    </ion-grid>
+    </div>
 </ion-content>

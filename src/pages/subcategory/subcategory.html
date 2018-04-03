@@ -1,0 +1,55 @@
+<!--
+  Generated template for the Subcategory page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>
+            <!--<img src="{{IMG_BASE}}{{selectedItem.logo_image}}" class="icon-img" style="vertical-align: top;float: right;">-->
+            <span>{{selectedItem.category_name}}</span>
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <ion-grid *ngIf="enableSection =='categories'">
+        <ion-row>
+            <ion-col col-3 *ngFor="let item of subCategoriesList">
+                <div>
+                    <a (click)="itemTapped($event,item)">
+                        <span *ngIf="!item.logo_image">
+					<img  src="{{IMG_BASE}}default_icon.png"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">								
+				</span>
+                        <span *ngIf="item.logo_image">
+					<img  src="{{IMG_BASE}}{{item.logo_image}}"  title="{{item.category_name}}" lazy-scroll-resize="true" class="icon-img" style="width: 50px; height:50px;">
+				</span>
+                        <p class="help-block button-positive icon-text text-center">{{item.category_name}}</p>
+                    </a>
+                </div>
+
+            </ion-col>
+        </ion-row>
+
+
+
+    </ion-grid>
+
+
+    <ion-list *ngIf="enableSection =='bus'">
+
+        <ion-searchbar [(ngModel)]="homeSearch" [autocomplete]='on' [showCancelButton]="true" (ionInput)="searchSource($event)">
+        </ion-searchbar>
+
+        <ion-item *ngFor="let item of busSources" (click)="sourceSelected($event,item)">
+            <ion-avatar item-left>
+                <img src="{{IMG_BASE}}bus.png">
+            </ion-avatar>
+            <h2> From - {{ item.source }}</h2>
+
+        </ion-item>
+    </ion-list>
+
+</ion-content>

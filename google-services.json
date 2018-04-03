@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "518575553715",
+    "firebase_url": "https://smart-ambegaon-manchar.firebaseio.com",
+    "project_id": "smart-ambegaon-manchar",
+    "storage_bucket": "smart-ambegaon-manchar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518575553715:android:51ed2445ad8d1c5e",
+        "android_client_info": {
+          "package_name": "smart.ambegaon.taluka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518575553715-k3m3hp8ujt2hvsm11v8sgutogtn0ruc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9cPecLxFgsi2DllSXjs4l1vJle-5mv44"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518575553715:android:0b7c979444c0bd75",
+        "android_client_info": {
+          "package_name": "smart.digi.pune"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518575553715-k3m3hp8ujt2hvsm11v8sgutogtn0ruc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9cPecLxFgsi2DllSXjs4l1vJle-5mv44"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

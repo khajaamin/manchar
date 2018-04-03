@@ -9,5 +9,12 @@
     "type": "image/png"
   }],
   "background_color": "#4e8ef7",
-  "theme_color": "#4e8ef7"
+  "theme_color": "#4e8ef7",
+    "xwalk_android_permissions": [ "ACCESS_FINE_LOCATION" ],
+    "xwalk_permissions": [
+  "Contacts",
+  "Geolocation",
+  "Messaging",
+  "Vibration"
+ ]
 }

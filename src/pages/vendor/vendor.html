@@ -1,0 +1,109 @@
+<!--
+  Generated template for the Vendor page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{selectedItem.shop_name}}</ion-title>
+
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+    <ion-card>
+        <ion-item>
+            <ion-avatar item-left>
+
+                <img *ngIf="!item.shop_image && subCategory" src="{{IMG_BASE}}{{subCategory.logo_image}}">
+                <img *ngIf="item.shop_image" src="{{IMG_BASE}}{{item.shop_image}}">
+            </ion-avatar>
+            <h2>{{item.shop_name}}</h2>
+            <p>
+                {{item.shop_owner}}</p>
+        </ion-item>
+
+        <!--<ion-fab end>
+            <button ion-fab color="primary"><ion-icon ios="ios-more" md="md-more"></ion-icon></button>
+        </ion-fab>-->
+
+        <ion-slides *ngIf="item.images && item.images.length > 0 "   initialSlide="0" autoplay="4000" loop="true" pager="true" >
+            <ion-slide *ngFor="let slide of item.images">
+                <img src="{{IMG_BASE}}{{slide.name}}" style="height: 170px;width: 100%">
+
+            </ion-slide>
+        </ion-slides>
+        <!--<img *ngIf="item.images <=0 && item.shop_image != ''" src="{{IMG_BASE}}{{item.shop_image}}" style="max-height: 220px">-->
+        <img *ngIf="!item.images || item.images.length <= 0" src="{{IMG_BASE}}default_no_image.png" style="max-height: 220px">
+
+        <ion-card-content>
+            <p><strong>{{item.description}}</strong></p>
+        </ion-card-content>
+
+        <ion-card-content>
+            <p><label>Address: </label>{{item.shop_address}}</p>
+        </ion-card-content>
+
+        <ion-card-content>
+            <p><label>Time: </label>
+                <ion-icon name="time"></ion-icon> {{item.time_from}} - {{item.time_to}}</p>
+        </ion-card-content>
+
+        <ion-card-content>
+            <p><label>Weekly Off: </label>{{(item.weekly_off)?item.weekly_off:"Never"}}</p>
+        </ion-card-content>
+
+        <ion-card-content>
+            <p><label>Website: </label><a href="{{item.website}}"> {{item.website}}</a></p>
+        </ion-card-content>
+
+        <ion-card-content>
+            <p> <label> Ratings: </label> ({{(item.ratings)?item.ratings:"Be first by rating"}})
+                <rating [(ngModel)]="item.ratings" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false" (ngModelChange)="addRatings($event)"></rating>
+            </p>
+        </ion-card-content>
+
+<!--
+        <ion-card-content>
+             <button ion-button (click)="whatsappShare()">Share on WhatsApp</button>
+            <button ion-button (click)="twitterShare()">Share on Twitter</button>
+            <button ion-button (click)="facebookShare()">Share on Facebook</button>
+            <button ion-button (click)="otherShare()">Share Other</button>
+        </ion-card-content>
+-->
+
+    </ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+    <ion-toolbar>
+
+        <ion-row>
+            <ion-col col-4>
+                <button (click)="phoneCall(item)" ion-button icon-left color="secondary" full>
+                  <ion-icon name="call"></ion-icon>
+                    Call 
+                </button>
+            </ion-col>
+            <ion-col col-4>
+                <button (click)="otherShare()" ion-button icon-left color="danger" full>
+                  <ion-icon name="share"></ion-icon>
+                    Share 
+                </button>
+            </ion-col>
+            <ion-col col-4>
+                <button [disabled]="item.latitude <= 0" (click)="getLocation(item)" ion-button icon-left full>
+                  <ion-icon name="map"></ion-icon>
+                    Location 
+                </button>
+
+            </ion-col>
+        </ion-row>
+
+
+    </ion-toolbar>
+</ion-footer>

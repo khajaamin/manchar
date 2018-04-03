@@ -1,0 +1,70 @@
+<!--
+  Generated template for the Vendors page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{selectedItem.category_name}}</ion-title>
+
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <div *ngIf="!vendorsListAvailable">
+        <ion-title>
+            <h3>No Vendors in this category</h3>
+        </ion-title>
+        <button (click)="addWithUs()" ion-button icon-left full>
+            List Your Business
+        </button>
+    </div>
+
+    <ion-grid *ngFor="let item of vendorsList">
+        <ion-card>
+            <ion-item (click)="itemTapped($event,item,selectedItem)">
+                <ion-avatar item-left>
+                    <img *ngIf="!item.logo_image" src="{{IMG_BASE}}{{selectedItem.logo_image}}">
+                    <img *ngIf="item.logo_image" src="{{IMG_BASE}}{{item.logo_image}}">
+                </ion-avatar>
+                <ion-card-title>{{item.shop_name}}</ion-card-title>
+                <p>{{item.shop_owner}}</p>
+            </ion-item>
+
+            <img src="{{IMG_BASE}}{{item.shop_image}}" *ngIf="item.shop_image" (click)="itemTapped($event,item,selectedItem)" style="max-height: 200px">
+            <img src="{{IMG_BASE}}default_icon.png" *ngIf="!item.shop_image" (click)="itemTapped($event,item,selectedItem)" style="max-height: 200px">
+
+            <ion-card-content>
+                <p><label>Address :</label>{{item.shop_address}}</p>
+
+                <p><label>Time :</label>
+                    <ion-icon name="time"></ion-icon> {{item.time_from}} - {{item.time_to}}</p>
+
+                <p><label>Weekly Off :</label>{{item.weekly_off}}</p>
+
+            </ion-card-content>
+
+
+            <ion-row>
+                <ion-col>
+                    <button (click)="phoneCall(item)" ion-button icon-left color="secondary" full>
+                      <ion-icon name="call"></ion-icon> Call
+                  
+                    </button>
+                </ion-col>
+                <ion-col>
+                    <button (click)="regularShare(item)" ion-button icon-left color="danger" full>
+                  <ion-icon name="share"></ion-icon>
+                    Share 
+                </button>
+                </ion-col>
+            </ion-row>
+
+
+        </ion-card>
+
+    </ion-grid>
+</ion-content>

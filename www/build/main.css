@@ -4776,10 +4776,6 @@ textarea::-webkit-input-placeholder {
   padding-left: 2px;
 }
 
-textarea::-moz-placeholder {
-  padding-left: 2px;
-}
-
 textarea:-ms-input-placeholder {
   padding-left: 2px;
 }
@@ -16518,10 +16514,10 @@ ion-searchbar {
 }
 
 .searchbar-ios {
-  padding: 0 8px;
+  padding: 0 "8px";
   min-height: 44px;
   border-top: 0.55px solid transparent;
-  border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 0.55px solid "red";
   background: rgba(0, 0, 0, 0.2);
 }
 
@@ -24385,4 +24381,86 @@ ion-navbar.toolbar {
   .wp .modal-wrapper > .ion-page > ion-header > ion-content.statusbar-padding:first-child[padding-top] .scroll-content {
     padding-top: calc(16px + 20px);
   }
+}
+
+.toolbar-title-md {
+  color: #424242;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 45px;
+  padding: 0 12px;
+}
+
+.button-md-danger {
+  background-color: #FCAC3E;
+}
+
+.button-md-danger:hover:not(.disable-hover) {
+  background-color: #FCAC3E;
+}
+
+.logo {
+  color: #FCAC3E;
+}
+
+.danger {
+  color: #FCAC3E;
+}
+
+ion-app._gmaps_cdv_ .nav-decor {
+  background-color: transparent !important;
+}
+
+page-adddetail #map {
+  height: 100%;
+}
+
+page-home .icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75px;
+  font-size: 10px;
+  text-align: center !important;
+}
+
+page-home .icon-img {
+  display: block;
+  margin: 0 auto;
+}
+
+page-subcategory .icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75px;
+  font-size: 10px;
+  text-align: center !important;
+}
+
+page-subcategory .icon-img {
+  display: block;
+  margin: 0 auto;
+}
+
+page-vendor .card-title-md {
+  font-size: 2.2rem !important;
+}
+
+page-vendor ul {
+  padding: 0px;
+}
+
+page-vendor ul.rating li {
+  padding: 5px 10px;
+  background: none;
+  color: #ffb400;
+}
+
+page-vendor ul.rating li ion-icon {
+  font-size: 30px;
+}
+
+page-vendors .card-title-md {
+  font-size: 2.0rem !important;
 }

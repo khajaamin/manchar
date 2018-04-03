@@ -1,3 +1,15 @@
 page-home {
-
+    .icon-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 75px;
+        font-size: 10px;
+        text-align: center !important;
+    }
+    .icon-img {
+        display: block;
+        margin: 0 auto;
+    }
+    
 }

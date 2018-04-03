@@ -7,28 +7,52 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.manchar119033"
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.manchar119033"
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.manchar119033"
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.manchar119033"
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.manchar119033"
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.manchar119033"
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
         },
-        "cordova-plugin-googlemaps": {
-            "API_KEY_FOR_ANDROID": "AIzaSyAXyWycd0tBay-H7H2P39inJGq7PuWnWJI",
-            "PACKAGE_NAME": "com.ionicframework.manchar119033"
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "smart.ambegaon.taluka"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "smart.digi.pune"
+        },
+        "cordova-plugin-admob-free": {
+            "PACKAGE_NAME": "smart.digi.pune"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-promise-polyfill": {
+            "PACKAGE_NAME": "smart.digi.pune"
+        }
+    }
 }
